@@ -10,7 +10,7 @@ services:
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
     volumes:
-      - /Users/github/simple-wordpress:/var/www/html
+      - ./:/var/www/html
   db:
     image: mysql:8.0
     restart: always
