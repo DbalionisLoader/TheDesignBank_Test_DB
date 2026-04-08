@@ -6,9 +6,9 @@
 
 Using terminal/console, navigate to the folder you want to have Wordpress in and git clone this repository
 
-**SSH** `git clone git@github.com:designbankdb/theDesignBank.git .`
+**SSH** `git clone git@github.com:designbankdb/TheDesignBank.git .`
 
-**HTTPS** `git clone https://github.com/designbankdb/theDesignBank.git . `
+**HTTPS** `git clone https://github.com/designbankdb/TheDesignBank.git . `
 
 ---
 
