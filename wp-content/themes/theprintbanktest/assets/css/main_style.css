@@ -10,6 +10,11 @@
 :root{
 --font-primary: 'DMSans-Regular', system-ui, -apple-system, sans-serif;
 --max-container-width: 1920px;
+
+--desktop-side-margin: 20px;
+
+--font-colour-black: #000000;
+--font-size-p: 24px;
 }
 
 *{
@@ -21,7 +26,6 @@ html{
   font-family: var(--font-primary);
   font-weight: 400;
   letter-spacing: 0;
-
 }
 
 
@@ -89,7 +93,7 @@ html{
 }
 
 
-
+/* Hero Section */
 
 .pb-hero-section{
   position: relative; 
@@ -142,5 +146,59 @@ html{
       height: auto;
     }
   
+  }
+}
+
+
+/* About Home Section */
+
+.pb-about-home{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 153px 0 136px 0;
+}
+
+
+.pb-about-home-container{
+  display: flex;
+  max-width: 1574px;
+  color: var(--font-colour-black);
+  flex-direction: row;
+  gap: 94px;
+  align-items: flex-start;
+  margin: 0 var(--desktop-side-margin);
+
+  .header-wrap{
+
+    flex: 0 0 auto;
+      max-width: 40%;
+
+    h2{
+      font-size: clamp(43px, 0.8vw, 48px);
+      font-weight: 400;
+      max-width: 381px;
+      white-space: nowrap;
+      letter-spacing: -2.22px;
+      
+    }
+  }
+
+  .content-wrap{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    
+
+    p{
+      font-size: var(--font-size-p) ;
+      font-weight: 400;
+      letter-spacing: -1px;
+    }
+
+   
   }
 }
