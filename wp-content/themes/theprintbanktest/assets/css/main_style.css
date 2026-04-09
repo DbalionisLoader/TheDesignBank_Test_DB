@@ -9,14 +9,138 @@
 
 :root{
 --font-primary: 'DMSans-Regular', system-ui, -apple-system, sans-serif;
+--max-container-width: 1920px;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
 }
 
 html{
   font-family: var(--font-primary);
+  font-weight: 400;
+  letter-spacing: 0;
+
 }
 
+
+.site-header{
+  /*position: relative; 
+  display: flex;
+  width: 100%;
+  justify-content: center;    
+  align-items: center;   */
+}
 
 .heading{
   color: cadetblue;
   font-size: 24px;
+}
+
+.pb-heading-wrap{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  
+  
+}
+
+
+
+.pd-heading-container{
+  /* max-width: var(--max-container-width); */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 18px 20px;
+}
+
+
+.pb-header-menu {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+ 
+ 
+
+   a{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+  }
+  
+}
+
+
+/* Using text-decoration for underline
+   Can switch to a::after for a more precise thicker underline */
+
+.pb-header-menu a.current-menu-item{
+    text-decoration: underline;
+      text-underline-offset: 6px;
+}
+
+
+
+
+.pb-hero-section{
+  position: relative; 
+  display: flex;
+  width: 100%;
+  justify-content: center;    
+  align-items: center; 
+  max-height: 1080px;
+  aspect-ratio: 16 / 9;
+  flex-direction: column;
+  overflow: hidden;
+
+  .pb-hero-background{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+
+  img{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  }
+}
+
+.pb-hero-container{
+  position: relative;
+  width: 100%;
+  max-width: 922px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 2;
+
+
+  .pb-hero-content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    img{
+      width: 100%;
+      height: auto;
+    }
+  
+  }
 }

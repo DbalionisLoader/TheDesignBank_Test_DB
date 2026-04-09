@@ -14,11 +14,11 @@ class Walker_Basic_Nav extends Walker_Nav_Menu
   {
     //$classes = implode(' ', $item->classes);
 
-
+    $class_names = implode(' ', array_filter($item->classes));
     $url  = ! empty($item->url) ? $item->url : '';
     $title = ! empty($item->title) ? $item->title : '';
 
-    $output .= '<a href="' . esc_url($url)  . '">';
+    $output .= '<a class="' . esc_attr($class_names) . '" href="' . esc_url($url)  . '">';
     $output .= esc_html($title);
     $output .= '</a>';
   }
