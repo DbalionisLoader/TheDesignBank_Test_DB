@@ -23,18 +23,18 @@
     </ul>
   </div>
   <div class="pb-services-image-gallery">
-    <div class="pb-gallary-grid">
-      <div class="pb-gallary-card">
+    <div class="pb-gallery-grid">
+      <div class="pb-gallery-card">
         <div class="pb-card-image">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Image-1.jpg" alt="Image of a poster and poster tube">
         </div>
       </div>
-      <div class="pb-gallary-card">
+      <div class="pb-gallery-card">
         <div class="pb-card-image">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Image-2.jpg" alt="Image of a poster and poster tube">
         </div>
       </div>
-      <div class="pb-gallary-card">
+      <div class="pb-gallery-card">
         <div class="pb-card-image">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Image-3.jpg" alt="Image of a poster and poster tube">
         </div>

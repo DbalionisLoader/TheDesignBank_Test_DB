@@ -14,6 +14,8 @@
 
   --font-colour-black: #000000;
   --font-size-p: 24px;
+  --font-size-p-mobile: 20px;
+  --font-size-heading-mobile: 28px;
 }
 
 * {
@@ -205,7 +207,7 @@ html {
 
       li {
         font-size: clamp(43px, 0.8vw, 48px);
-        letter-spacing: -2.2px;
+        letter-spacing: -1.2px;
       }
     }
 
@@ -224,13 +226,13 @@ html {
     margin: 0 auto;
   }
 
-  .pb-gallary-grid {
+  .pb-gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 21px;
     max-width: 1879px;
 
-    .pb-gallary-card {
+    .pb-gallery-card {
       .pb-card-image {
         overflow: hidden;
       }
@@ -243,7 +245,7 @@ html {
       }
     }
 
-    .pb-gallary-card:hover img {
+    .pb-gallery-card:hover img {
       transform: scale(1.15);
     }
   }
@@ -267,3 +269,104 @@ html {
     }
   }
 }
+
+/* Media Queries Land */
+
+@media (max-width: 768px) {
+  .pb-about-home-container {
+    gap: 26px;
+  }
+  .pb-service-section {
+    .pb-list-container {
+      .pb-services-list {
+        li {
+          font-size: var(--font-size-heading-mobile);
+          letter-spacing: -2.7px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile Header */
+
+  .pb-header-menu {
+    a {
+      font-size: 18px;
+    }
+  }
+
+  /* Mobile Hero Section */
+  .pb-hero-section {
+    aspect-ratio: auto;
+    height: 688px;
+  }
+
+  .pb-about-home {
+    padding-top: 46px;
+    padding-bottom: 43px;
+  }
+
+  .pb-about-home-container {
+    gap: 26px;
+    flex-direction: column;
+
+    .header-wrap {
+      order: 1;
+      max-width: 100%;
+
+      h2 {
+        font-size: var(--font-size-heading-mobile);
+      }
+    }
+
+    .content-wrap {
+      order: 2;
+
+      p {
+        font-size: var(--font-size-p-mobile);
+        letter-spacing: 0px;
+      }
+    }
+  }
+
+  /* Mobile Service Section */
+  .pb-service-section {
+    .pb-list-container {
+      order: 2;
+      padding-bottom: 0px;
+
+      .pb-services-list {
+        li {
+          font-size: var(--font-size-heading-mobile);
+          letter-spacing: -2.7px;
+        }
+      }
+    }
+  }
+
+  /* Mobile Gallery */
+  .pb-service-section {
+    .pb-services-image-gallery {
+      order: 1;
+      padding-bottom: 78px;
+    }
+
+    .pb-gallery-grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 15px;
+    }
+  }
+
+  /* Mobile Footer */
+  .site-footer {
+    padding-bottom: 20px;
+
+    .container {
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+} /* End Media */
