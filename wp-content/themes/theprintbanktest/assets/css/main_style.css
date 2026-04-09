@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'DMSans-Regular';
   src: url('/wp-content/themes/theprintbanktest/assets/fonts/DMSans-Regular.ttf');
@@ -7,29 +6,28 @@
   font-display: swap;
 }
 
-:root{
---font-primary: 'DMSans-Regular', system-ui, -apple-system, sans-serif;
---max-container-width: 1920px;
+:root {
+  --font-primary: 'DMSans-Regular', system-ui, -apple-system, sans-serif;
+  --max-container-width: 1920px;
 
---desktop-side-margin: 20px;
+  --desktop-side-margin: 20px;
 
---font-colour-black: #000000;
---font-size-p: 24px;
+  --font-colour-black: #000000;
+  --font-size-p: 24px;
 }
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
 }
 
-html{
+html {
   font-family: var(--font-primary);
   font-weight: 400;
   letter-spacing: 0;
 }
 
-
-.site-header{
+.site-header {
   /*position: relative; 
   display: flex;
   width: 100%;
@@ -37,25 +35,21 @@ html{
   align-items: center;   */
 }
 
-.heading{
+.heading {
   color: cadetblue;
   font-size: 24px;
 }
 
-.pb-heading-wrap{
+.pb-heading-wrap {
   width: 100%;
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   z-index: 2;
-  
-  
 }
 
-
-
-.pd-heading-container{
+.pd-heading-container {
   /* max-width: var(--max-container-width); */
   margin: 0 auto;
   display: flex;
@@ -64,65 +58,58 @@ html{
   padding: 18px 20px;
 }
 
-
 .pb-header-menu {
-  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
- 
- 
 
-   a{
+  a {
     text-decoration: none;
     color: white;
     font-size: 24px;
   }
-  
 }
-
 
 /* Using text-decoration for underline
    Can switch to a::after for a more precise thicker underline */
 
-.pb-header-menu a.current-menu-item{
-    text-decoration: underline;
-      text-underline-offset: 6px;
+.pb-header-menu a.current-menu-item {
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
-
 
 /* Hero Section */
 
-.pb-hero-section{
-  position: relative; 
+.pb-hero-section {
+  position: relative;
   display: flex;
   width: 100%;
-  justify-content: center;    
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   max-height: 1080px;
   aspect-ratio: 16 / 9;
   flex-direction: column;
   overflow: hidden;
 
-  .pb-hero-background{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
+  .pb-hero-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
 
-  img{
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   }
 }
 
-.pb-hero-container{
+.pb-hero-container {
   position: relative;
   width: 100%;
   max-width: 922px;
@@ -134,25 +121,22 @@ html{
   padding: 0 20px;
   z-index: 2;
 
-
-  .pb-hero-content{
+  .pb-hero-content {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-   
-    img{
+
+    img {
       width: 100%;
       height: auto;
     }
-  
   }
 }
 
-
 /* About Home Section */
 
-.pb-about-home{
+.pb-about-home {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -161,8 +145,7 @@ html{
   padding: 153px 0 136px 0;
 }
 
-
-.pb-about-home-container{
+.pb-about-home-container {
   display: flex;
   max-width: 1574px;
   color: var(--font-colour-black);
@@ -171,34 +154,116 @@ html{
   align-items: flex-start;
   margin: 0 var(--desktop-side-margin);
 
-  .header-wrap{
-
+  .header-wrap {
     flex: 0 0 auto;
-      max-width: 40%;
+    max-width: 40%;
 
-    h2{
+    h2 {
+      /* Figma says font size is 48px which does not match the design layout in browser
+      lowered to 43px to match the design layout closer  */
       font-size: clamp(43px, 0.8vw, 48px);
       font-weight: 400;
       max-width: 381px;
-      white-space: nowrap;
       letter-spacing: -2.22px;
-      
     }
   }
 
-  .content-wrap{
-    
+  .content-wrap {
     display: flex;
     flex-direction: column;
     gap: 36px;
-    
 
-    p{
-      font-size: var(--font-size-p) ;
+    p {
+      font-size: var(--font-size-p);
       font-weight: 400;
       letter-spacing: -1px;
     }
+  }
+}
 
-   
+/* Homepage Services List */
+.pb-service-section {
+  display: flex;
+  flex-direction: column;
+
+  padding-bottom: 93px;
+  width: min(1880px, calc(100% - 40px));
+  margin-inline: auto;
+
+  .pb-list-container {
+    flex: 0 0 100%;
+    margin: 0 auto;
+    padding-bottom: 42px;
+
+    .pb-services-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+
+      li {
+        font-size: clamp(43px, 0.8vw, 48px);
+        letter-spacing: -2.2px;
+      }
+    }
+
+    .pb-services-list li::after {
+      content: ' //';
+    }
+
+    .pb-services-list li:last-child::after {
+      content: '';
+    }
+  }
+
+  .pb-services-image-gallery {
+    flex: 0 0 100%;
+
+    margin: 0 auto;
+  }
+
+  .pb-gallary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 21px;
+    max-width: 1879px;
+
+    .pb-gallary-card {
+      .pb-card-image {
+        overflow: hidden;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: transform 300ms ease;
+      }
+    }
+
+    .pb-gallary-card:hover img {
+      transform: scale(1.15);
+    }
+  }
+}
+
+/* Footer */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  width: min(1880px, calc(100% - 40px));
+  margin-inline: auto;
+  padding-bottom: 13px;
+
+  .container {
+    p {
+      font-size: 24px;
+    }
+
+    span {
+      text-decoration: underline;
+    }
   }
 }

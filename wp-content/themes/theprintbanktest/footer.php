@@ -1,6 +1,6 @@
 <footer class="site-footer">
   <div class="container">
-    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+    <p>Designed and Built by <span>The Design Bank</span></p>
   </div>
 </footer>
 

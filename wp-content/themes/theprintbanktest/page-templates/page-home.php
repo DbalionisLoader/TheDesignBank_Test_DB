@@ -10,6 +10,7 @@ get_header();
   <?php get_template_part('template-parts/hero/hero', 'home'); ?>
   <section class="pb-page-content">
     <?php get_template_part('template-parts/about/about', 'home'); ?>
+    <?php get_template_part('template-parts/service-list/services', 'home'); ?>
     <?php
     while (have_posts()) :
       the_post();
