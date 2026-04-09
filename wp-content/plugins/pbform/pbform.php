@@ -58,7 +58,7 @@ function pb_form_render_shortcode()
 
     $json_output2 = wp_json_encode($payload, JSON_PRETTY_PRINT);
 
-    $webhook_url = 'https://webhook.site/20f453d4-e5e9-452a-acba-04dee358a5b8';
+    $webhook_url = 'https://script.google.com/macros/s/AKfycbzVKxPeK-ws3Qgcm9Fs7fEDAJvVM0KUrYQiaRKGDv2JlZdhgVfAkbjLCmFbIO-Thb-w/exec';
 
     $response = wp_remote_post(
       $webhook_url,
@@ -68,6 +68,7 @@ function pb_form_render_shortcode()
         ],
         'body' => wp_json_encode($payload),
         'timeout' => 15,
+        'redirection' => 0,
       ]
     );
 
@@ -91,17 +92,17 @@ function pb_form_render_shortcode()
   <form method="post" class="pbform">
     <p>
       <label>Name</label><br>
-      <input type="text" name="pb_name" required value="<?php echo esc_attr($values['name']); ?>">
+      <input type="text" name="pb_name" required value="<?php echo esc_attr($form_values['name']); ?>">
     </p>
 
     <p>
       <label>Email</label><br>
-      <input type="email" name="pb_email" required value="<?php echo esc_attr($values['email']); ?>">
+      <input type="email" name="pb_email" required value="<?php echo esc_attr($form_values['email']); ?>">
     </p>
 
     <p>
       <label>Message</label><br>
-      <textarea name="pb_message" required><?php echo esc_textarea($values['message']); ?></textarea>
+      <textarea name="pb_message" required><?php echo esc_textarea($form_values['message']); ?></textarea>
     </p>
 
     <input type="hidden" name="pbform_submitted" value="1">
