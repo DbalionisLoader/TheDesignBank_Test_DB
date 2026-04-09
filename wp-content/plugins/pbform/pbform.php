@@ -26,6 +26,7 @@ add_shortcode('pbform', 'pb_form_render_shortcode');
  * 1: Declare function
  * 2: Assign vars and array
  * 3: Sanitize and insert the form field values into the $form_values area
+ * 4: Create a fresh array with sanitized values and convert into json 
  */
 
 function pb_form_render_shortcode()
@@ -56,6 +57,31 @@ function pb_form_render_shortcode()
     ];
 
     $json_output2 = wp_json_encode($payload, JSON_PRETTY_PRINT);
+
+    $webhook_url = 'https://webhook.site/20f453d4-e5e9-452a-acba-04dee358a5b8';
+
+    $response = wp_remote_post(
+      $webhook_url,
+      [
+        'headers' => [
+          'Content-Type' => 'application/json',
+        ],
+        'body' => wp_json_encode($payload),
+        'timeout' => 15,
+      ]
+    );
+
+    if (is_wp_error($response)) {
+      $debug_output = 'Error: ' . $response->get_error_message();
+    } else {
+      $response_code = wp_remote_retrieve_response_code($response);
+      $response_body = wp_remote_retrieve_body($response);
+
+      $debug_output = "POST sent successfully\n";
+      $debug_output .= "Response code: " . $response_code . "\n";
+      $debug_output .= "Payload:\n" . wp_json_encode($payload, JSON_PRETTY_PRINT) . "\n\n";
+      $debug_output .= "Response body:\n" . $response_body;
+    }
   }
 
 
@@ -87,6 +113,11 @@ function pb_form_render_shortcode()
   if ($json_output2): ?>
     <h3>JSON OUTPUT TEST</h3>
     <pre><?php echo esc_html($json_output2); ?></pre>
+  <?php endif; ?>
+  <?php if ($debug_output): ?>
+    <h3>JSON RESPONSE TEST</h3>
+    <h3>Debug output</h3>
+    <pre><?php echo esc_html($debug_output); ?></pre>
   <?php endif; ?>
 
 <?php
