@@ -29,17 +29,19 @@ html {
   letter-spacing: 0;
 }
 
-.site-header {
-  /*position: relative; 
-  display: flex;
-  width: 100%;
-  justify-content: center;    
-  align-items: center;   */
+.site-header[data-page='home'] {
+  .pb-header-menu {
+    a {
+      color: white;
+    }
+  }
 }
-
-.heading {
-  color: cadetblue;
-  font-size: 24px;
+.site-header[data-page='inner'] {
+  .pb-header-menu {
+    a {
+      color: var(--font-colour-black);
+    }
+  }
 }
 
 .pb-heading-wrap {
@@ -69,7 +71,7 @@ html {
 
   a {
     text-decoration: none;
-    color: white;
+    /*  color: white; */
     font-size: 24px;
   }
 }

@@ -7,7 +7,7 @@
 		<?php wp_body_open(); ?>
 
 
-		<header class="site-header">
+		<header class="site-header" data-page="<?php echo is_front_page() ? 'home' : 'inner'; ?>">
 			<div class="pb-heading-wrap">
 				<div class="pd-heading-container">
 					<div class="pb-header-menu">
