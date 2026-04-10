@@ -5,11 +5,18 @@ Hello, welcome to my submission of the "The Design Bank" test website.
 # Technical Decisions
 
 I used template parts instead of blocks because ACF Pro is not available.
+
 The form sends JSON data using wp_remote_post.
+
 The POST request is sent to a Google Apps Script.
+
 The script stores the submitted data in a Google Sheet.
+
 Use one main style sheet for simplicity. Can use POST CSS to combine multiple CSS files for future builds.
-Used slighly smaller heading font size on homepage, to try match the design dimension from figma for closely.
+
+Used slighly smaller heading font size on homepage, to try match the design dimension from figma for
+closely.
+
 Safari testing was not completed for the local environment. Any layout issues may be related to element width, height, or form styling.
 
 # Docker Setup Procedure
@@ -19,6 +26,7 @@ Just run:
 1. docker compose up -d --build
 
 The db should auto init from db/init
+
 Core WordPress files should be hidden inside the container
 
 # WordPress Admin Login Details
@@ -26,11 +34,13 @@ Core WordPress files should be hidden inside the container
 Site Title: The Print Bank
 
 Username: admin
+
 Password: spellcaster222
 
 # Google Sheet Access
 
 Google sheet link just incase.
+
 https://docs.google.com/spreadsheets/d/1oOuqEk_CVQ8PB4jKRs03NunxQJzIrMkWlWQ8Dr9jJr8/edit?usp=sharing
 
 # Simple Wordpress Docker Install
