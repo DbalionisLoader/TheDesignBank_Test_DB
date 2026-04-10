@@ -49,6 +49,7 @@ html {
       padding-left: 20px;
       font-size: 20px;
       letter-spacing: -1.2px;
+      font-family: var(--font-primary);
     }
 
     .pb-form-input {
