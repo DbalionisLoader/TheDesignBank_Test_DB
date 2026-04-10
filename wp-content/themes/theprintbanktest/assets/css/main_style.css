@@ -30,6 +30,11 @@ html {
   letter-spacing: 0;
 }
 
+/* Display only in WP admin */
+.admin-bar .pb-heading-wrap {
+  top: 20px;
+}
+
 .site-header[data-page='home'] {
   .pb-header-menu {
     a {
@@ -363,17 +368,43 @@ html {
 }
 
 @media (max-width: 768px) {
+  .pb-hero-section {
+    aspect-ratio: auto;
+    height: 688px;
+  }
+
   .pb-about-home-container {
     gap: 26px;
+    flex-direction: column;
+
+    .header-wrap {
+      max-width: 100%;
+      order: 1;
+    }
+
+    .content-wrap {
+      order: 2;
+    }
   }
   .pb-service-section {
     .pb-list-container {
+      order: 2;
       .pb-services-list {
         li {
           font-size: var(--font-size-heading-mobile);
           letter-spacing: -2.7px;
         }
       }
+    }
+
+    .pb-services-image-gallery {
+      order: 1;
+      padding-bottom: 78px;
+    }
+
+    .pb-gallery-grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 15px;
     }
   }
 
@@ -423,7 +454,7 @@ html {
   }
 } /* END OF 768 media */
 
-@media (max-width: 480px) {
+@media (max-width: 468px) {
   /* Mobile Header */
 
   .pb-header-menu {

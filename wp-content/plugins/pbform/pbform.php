@@ -90,6 +90,16 @@ function pb_form_render_shortcode()
       ]
     );
 
+    /** Catch POST response here
+     * Should read for response code and print accoring message. E.g. 200 = Form sent correct etc
+     * Form submit corrects, but Google returns a 302 error
+     * FUTURE UPDATES:
+     * Add a clear form sent or not sent message
+     * Add ajax for page does not refresh on send
+     * Add recapcha for basic security
+     * Add server side input validation
+     * Add Country based IP blocking to counter more aggresive spam
+     */
     if (is_wp_error($response)) {
       $debug_output = 'Error: ' . $response->get_error_message();
     } else {
@@ -97,9 +107,6 @@ function pb_form_render_shortcode()
       $response_body = wp_remote_retrieve_body($response);
 
       $debug_output = "POST sent successfully\n";
-      $debug_output .= "Response code: " . $response_code . "\n";
-      $debug_output .= "Payload:\n" . wp_json_encode($payload, JSON_PRETTY_PRINT) . "\n\n";
-      $debug_output .= "Response body:\n" . $response_body;
     }
   }
 
@@ -132,14 +139,7 @@ function pb_form_render_shortcode()
       </div>
     </form>
   </div>
-  <?php
-  if ($json_output2): ?>
-    <h3>JSON OUTPUT TEST</h3>
-    <pre><?php echo esc_html($json_output2); ?></pre>
-  <?php endif; ?>
   <?php if ($debug_output): ?>
-    <h3>JSON RESPONSE TEST</h3>
-    <h3>Debug output</h3>
     <pre><?php echo esc_html($debug_output); ?></pre>
   <?php endif; ?>
 
