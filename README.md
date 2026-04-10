@@ -21,9 +21,8 @@ Safari testing was not completed for the local environment. Any layout issues ma
 
 # Docker Setup Procedure
 
-Just run:
-
-1. docker compose up -d --build
+1. Clone GitHub repo to a local folder, open console
+2. docker compose up -d --build
 
 The db should auto init from db/init
 
