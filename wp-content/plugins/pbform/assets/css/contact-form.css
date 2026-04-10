@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.pb-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* Delete after */
+  margin-top: 80px;
+  margin-left: 80px;
+  max-width: 400px;
+
+  .pb-form-heading {
+    padding-bottom: 74px;
+
+    h2 {
+      font-size: var(--font-size-h2);
+      line-height: 0px;
+      letter-spacing: -2.2px;
+      font-weight: 400;
+    }
+  }
+}
+
+.pbform {
+  display: flex;
+  flex-direction: column;
+  gap: 13.67px;
+
+  .pb-contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 13.67px;
+
+    label {
+      font-size: var(--font-size-p);
+      letter-spacing: -1.2px;
+    }
+
+    .pb-form-input,
+    .pb-form-textarea {
+      background-color: #f6f6f6;
+      border: none;
+      border-radius: 4px;
+      padding-left: 20px;
+      font-size: 20px;
+      letter-spacing: -1.2px;
+    }
+
+    .pb-form-input {
+      height: 56px;
+    }
+
+    .pb-form-textarea {
+      height: 183px;
+      padding-top: 14.5px;
+    }
+
+    .pb-form-input::placeholder,
+    .pb-form-textarea::placeholder {
+      color: C6C6C6;
+      font-family: var(--font-primary);
+    }
+  }
+
+  .pb-contact-submit {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 8px;
+
+    button {
+      font-family: var(--font-primary);
+      letter-spacing: -1.2px;
+      font-size: 20px;
+      border: 1px solid #000000;
+      border-radius: 4px;
+      background-color: white;
+      padding: 12.75px 40px 12.75px 40px;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}

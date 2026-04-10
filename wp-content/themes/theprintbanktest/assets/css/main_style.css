@@ -15,6 +15,7 @@
   --font-colour-black: #000000;
   --font-size-p: 24px;
   --font-size-p-mobile: 20px;
+  --font-size-h2: 48px;
   --font-size-heading-mobile: 28px;
 }
 
@@ -180,7 +181,7 @@ html {
     p {
       font-size: var(--font-size-p);
       font-weight: 400;
-      letter-spacing: -1px;
+      letter-spacing: -1.2px;
     }
   }
 }

@@ -7,12 +7,14 @@ get_header();
 ?>
 
 
-<main class="pb-main-content">
-  <?php
-  if (shortcode_exists('pbform')) {
-    echo do_shortcode('[pbform]');
-  }
-  ?>
+<main class="pb-contact-content">
+  <div class="class-pb-contact-wrapper">
+
+  </div><?php
+        if (shortcode_exists('pbform')) {
+          echo do_shortcode('[pbform]');
+        }
+        ?>
   <section class="pb-page-content">
 
     <?php
