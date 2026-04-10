@@ -14,7 +14,12 @@ Safari testing was not completed for the local environment. Any layout issues ma
 
 # Docker Setup Procedure
 
+Just run:
+
 1. docker compose up -d --build
+
+The db should auto init from db/init
+Core WordPress files should be hidden inside the container
 
 # WordPress Admin Login Details
 
@@ -24,6 +29,9 @@ Username: admin
 Password: spellcaster222
 
 # Google Sheet Access
+
+Google sheet link just incase.
+https://docs.google.com/spreadsheets/d/1oOuqEk_CVQ8PB4jKRs03NunxQJzIrMkWlWQ8Dr9jJr8/edit?usp=sharing
 
 # Simple Wordpress Docker Install
 
