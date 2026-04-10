@@ -254,13 +254,94 @@ html {
   }
 }
 
+/* Contact Page */
+
+.pb-contact-content {
+  padding-top: 228px;
+  padding-left: 20px;
+  margin-right: 20px;
+}
+
+.pb-contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1564px;
+  margin: 0 auto;
+  gap: 32px;
+}
+
+.pb-contact-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(50% - 32px);
+
+  .pb-contact-header {
+    padding-bottom: 74px;
+    h2 {
+      font-size: var(--font-size-h2);
+      letter-spacing: -2.2px;
+      font-weight: 400;
+    }
+  }
+
+  .pb-details-wrap {
+    font-style: normal;
+    dl {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .pb-contact-child {
+      .pb-contact-label,
+      .pb-address-details {
+        font-size: var(--font-size-p);
+        letter-spacing: -1.2px;
+        color: #000000;
+        font-family: var(--font-primary);
+        font-weight: 400;
+      }
+
+      .pb-address-label {
+        padding-top: 24px;
+        padding-bottom: 8px;
+      }
+
+      .pb-address-details {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      a {
+        font-family: var(--font-primary);
+        font-size: var(--font-size-h2);
+        text-decoration: underline;
+        text-underline-offset: 12px;
+        color: #000000;
+      }
+    }
+  }
+}
+
+/* Contact Map */
+
+.pb-map-wrapper {
+  flex: 0 0 100%;
+  padding-top: 55px;
+  padding-bottom: 94px;
+}
+
 /* Footer */
 .site-footer {
   display: flex;
   flex-direction: column;
-  width: min(1880px, calc(100% - 40px));
+  width: 100%;
+  justify-content: flex-start;
   margin-inline: auto;
   padding-bottom: 13px;
+  padding-left: 20px;
 
   .container {
     p {
@@ -274,6 +355,12 @@ html {
 }
 
 /* Media Queries Land */
+
+@media (max-width: 1080px) {
+  .pb-contact-detail-wrapper {
+    flex: 0 0 calc(100%);
+  }
+}
 
 @media (max-width: 768px) {
   .pb-about-home-container {
@@ -289,7 +376,52 @@ html {
       }
     }
   }
-}
+
+  /* Contact Page Mobile */
+
+  .pb-contact-content {
+    padding-top: 84px;
+  }
+
+  .pb-contact-detail-wrapper {
+    .pb-contact-header {
+      padding-bottom: 19px;
+      h2 {
+        font-size: var(--font-size-heading-mobile);
+      }
+    }
+
+    .pb-details-wrap {
+      dl {
+        gap: 18px;
+      }
+
+      .pb-contact-child {
+        .pb-contact-label,
+        .pb-address-details {
+          font-size: var(--font-size-p-mobile);
+        }
+
+        .pb-address-label {
+          padding-top: 12px;
+          padding-bottom: 8px;
+        }
+
+        a {
+          font-size: var(--font-size-heading-mobile);
+          text-underline-offset: 8px;
+        }
+      }
+    }
+  }
+
+  .pb-map-wrapper {
+    height: 626px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 24px;
+  }
+} /* END OF 768 media */
 
 @media (max-width: 480px) {
   /* Mobile Header */
